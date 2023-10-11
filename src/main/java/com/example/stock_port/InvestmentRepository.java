@@ -15,7 +15,7 @@ public interface InvestmentRepository extends CrudRepository<Investment, Long> {
     // Find by ID
     Optional<Investment> findById(@NonNull Long id);
     // Find by Investment Name
-    List<Investment> findByInvestmentName(String investmentName);
+    Investment findByInvestmentName(String investmentName);
 
     List<Investment> findByDollarAmountInvestedGreaterThan(BigDecimal amount);
 

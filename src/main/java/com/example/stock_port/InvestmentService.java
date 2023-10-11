@@ -29,7 +29,7 @@ public class InvestmentService {
         return investmentRepository.findAll();
     }
 
-    public List<Investment> getInvestmentByName(String investmentName) {
+    public Investment getInvestmentByName(String investmentName) {
         return investmentRepository.findByInvestmentName(investmentName);
     }
 
