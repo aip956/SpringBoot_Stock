@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Investment {
     @Id
@@ -18,9 +20,9 @@ public class Investment {
     @Getter @Setter
     private String investmentName;
     @Getter @Setter
-    private double dollarAmountInvested;
+    private BigDecimal dollarAmountInvested;
 
-    public Investment(String investmentName, double dollarAmountInvested) {
+    public Investment(String investmentName, BigDecimal dollarAmountInvested) {
         this.investmentName = investmentName;
         this.dollarAmountInvested = dollarAmountInvested;
     }
