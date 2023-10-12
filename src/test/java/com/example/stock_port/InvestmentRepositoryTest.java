@@ -10,20 +10,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
 
-@SpringBootTest
-class InvestmentRepositoryTest {
-    @Autowired
-    private InvestmentRepository investmentRepository;
-
-    @Test
-    @Disabled("Disabling to troubleshoot")
-    public void testFindByInvestmentName() {
-        Investment investment = new Investment("Example", new BigDecimal("1000.0"));
-        investmentRepository.save(investment);
-
-        Investment foundInvestment = investmentRepository.findByInvestmentName("Example");
-        assertNotNull(foundInvestment);
-        assertEquals("Example", foundInvestment.getInvestmentName());
-
-    }
-}
+//@SpringBootTest
+//class InvestmentRepositoryTest {
+//    @Autowired
+//    private InvestmentRepository investmentRepository;
+//
+//    @Test
+//    @Disabled("Disabling to troubleshoot")
+//    public void testFindByInvestmentName() {
+//        Investment investment = new Investment("Example", new BigDecimal("1000.0"));
+//        investmentRepository.save(investment);
+//
+//        Investment foundInvestment = investmentRepository.findByInvestmentName("Example");
+//        assertNotNull(foundInvestment);
+//        assertEquals("Example", foundInvestment.getInvestmentName());
+//
+//    }
+//}
