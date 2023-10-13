@@ -1,4 +1,5 @@
 package com.example.stock_port;
+import com.example.stock_port.Investment;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -40,7 +41,14 @@ public class InvestmentServiceTest {
         System.out.println("37testInv: " + testInvestment);
 
         // Mock the behavior of the save method to return the testInvestment
-        when(mockInvestmentRepository.save(any(Investment.class))).thenReturn(testInvestment);
+        when(mockInvestmentRepository.save(any(Investment.class))).thenAnswer(invocation -> {
+            System.out.println("44In when mock save");
+            Investment savedInvestment = invocation.getArgument(0);
+            savedInvestment.setId(1L);
+            System.out.println("47savedInv: " + savedInvestment);
+            return savedInvestment;
+        });
+
 
         // Save the test investment to the test DB
         System.out.println("46Before saving test investment");
